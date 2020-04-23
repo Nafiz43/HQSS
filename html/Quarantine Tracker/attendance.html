@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Student</title>
+     <link rel = "icon" type = "image/png" href = "images/mm.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+      authDomain: "maas-fb909.firebaseapp.com",
+      databaseURL: "https://maas-fb909.firebaseio.com",
+      projectId: "maas-fb909",
+      storageBucket: "maas-fb909.appspot.com",
+      messagingSenderId: "147741298520",
+      appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+      measurementId: "G-ZFZHDL8MDG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
+  
+  	 <style>
+   .jumbotron{
+      background-color: #3B5998;
+      color: white
+    }
+  </style>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar" class="active">
+        <!-- <img class="img-fluid" src="final.png" alt="..." class="img-thumbnail"> -->
+ <div class="container-fluid">
+
+           
+           <button type="button" id="sidebarCollapse"  class="btn btn-outline-success">
+              <i class="fa fa-bars fa-2x"></i> 
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+        <h3>HQSS</h3>
+        <ul class="list-unstyled components mb-5">
+          <li class="active cl_hover_btn ">
+            <a href="student_main.html"><span class="fa fa-home"></span> Home</a>
+          </li>
+          <li class="active cl_hover_btn active_btn">
+              <a href="attendance.html"><span class="fa fa-address-card-o"></span> Surveillance</a>
+          </li>
+          <li class="active cl_hover_btn">
+            <a href="eligibility.html"><span class="fa fa-table"></span> Area</a>
+          </li>
+          <li class="active cl_hover_btn"> 
+          <!--  <i class="fa fa-area-chart" aria-hidden="true"></i> -->
+            <a href="fine.html"><span class="fa fa-area-chart"></span> Statistics</a>
+          </li>
+
+      
+          
+            <li>
+           <!--   <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-file-text-o"></span> Application </a> -->
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li class="active cl_hover_btn ">
+                    <a href="apply_application.html">Apply</a>
+                </li>
+                <li class="active cl_hover_btn ">
+                    <a href="application_status.html">Status</a>
+                </li>
+                
+              </ul>
+            </li>
+
+        </ul>
+
+        <div class="footer">
+          <p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Web Application is made by MIST CSE-17
+          </p>
+        </div>
+      </nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+              <!-- Adding LOGO THERE -->
+              <ul class="nav navbar-nav">
+
+                <li class="nav-item">
+                   <img class="img-fluid" src="images/mm.png" alt="Chania" width="70" height="70">
+                </li>
+
+                <li class="nav-item">
+                     <h2>&nbsp;Home Quarantine Surveillance System  </h2>
+
+
+                </li>
+                
+              
+              </ul>
+
+            <!-- Adding LOGO DONE -->
+
+
+              <ul class="nav navbar-nav navbar-right">
+
+                <li class="nav-item">
+                   <!-- <a class="nav-link" href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>-->
+                    <a href="../../login/change_password.html"><h4><span class="fa fa-key">Password</h4></a>
+                </li>
+                 <li class="nav-item">
+                    <a href="student_main.html"><h4><div id="kickoff1"> </div> </h4></a>
+                </li>
+                <li>
+                  <a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+
+        <div>
+        	<div class="jumbotron">
+        		<h2><center>Quarantine Person Information</center></h2>
+        	</div>
+        
+
+   <form class="form-horizontal" >
+    <div class="form-group">
+    	  <label class="control-label col-sm-1" for="email">Enter ID:</label>
+      <div class="col-sm-2">
+        <input class="form-control" id="date" name="date" placeholder="Enter ID" type="text"/>
+      </div>
+      <button  type="submit" class="btn btn-default">Search</button>
+    </div>
+ </form>
+
+
+
+
+
+ <div class="container-fluid">
+ 	<div style="font-size: 16pt" class="alert alert-success" role="alert">
+	Detailed Information of user <strong>Noor Nafiz Islam</strong>! </div>
+
+
+ 	<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:12px 13px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:12px 13px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-rev0{font-weight:bold;font-family:Arial, Helvetica, sans-serif !important;;background-color:#dae8fc;border-color:#000000;text-align:left;vertical-align:top}
+.tg .tg-z0ub{font-family:Arial, Helvetica, sans-serif !important;;background-color:#efefef;border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-q2ov{font-family:Arial, Helvetica, sans-serif !important;;border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-vdnk{background-color:#f9f9f9;font-family:Arial, Helvetica, sans-serif !important;;border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-y3to{font-weight:bold;font-family:Arial, Helvetica, sans-serif !important;;background-color:#dae8fc;border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-r2dq{font-weight:bold;font-family:Arial, Helvetica, sans-serif !important;;background-color:#dae8fc;border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-xfbb{background-color:#efefef;font-weight:bold;font-family:Arial, Helvetica, sans-serif !important;;border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-g08p{background-color:#efefef;font-weight:bold;font-family:Arial, Helvetica, sans-serif !important;;border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-mnur{font-family:Arial, Helvetica, sans-serif !important;;background-color:#efefef;border-color:#000000;text-align:center;vertical-align:middle}
+.tg .tg-fayo{background-color:#f9f9f9;font-family:Arial, Helvetica, sans-serif !important;;border-color:#000000;text-align:center;vertical-align:top}
+.tg .tg-nehb{font-family:Arial, Helvetica, sans-serif !important;;border-color:#333333;text-align:center;vertical-align:top}
+.tg .tg-hixa{background-color:#f9f9f9;font-family:Arial, Helvetica, sans-serif !important;;border-color:#333333;text-align:center;vertical-align:middle}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-y3to" colspan="3" rowspan="3">Serial</th>
+    <th class="tg-y3to" rowspan="3">Timestamp</th>
+    <th class="tg-rev0" colspan="4">Location</th>
+    <th class="tg-r2dq" colspan="2">Health</th>
+    <th class="tg-r2dq" colspan="4">Alert</th>
+  </tr>
+  <tr>
+    <td class="tg-xfbb" colspan="2">Home</td>
+    <td class="tg-g08p" colspan="2">Present</td>
+    <td class="tg-g08p" rowspan="2">Temparature</td>
+    <td class="tg-g08p" rowspan="2">Heart Rate</td>
+    <td class="tg-g08p" rowspan="2">Location Change</td>
+    <td class="tg-g08p" rowspan="2">Low Battery</td>
+    <td class="tg-g08p" rowspan="2">Fingerprint Mismatch</td>
+    <td class="tg-g08p" rowspan="2">Not wearing</td>
+  </tr>
+  <tr>
+    <td class="tg-z0ub">lat</td>
+    <td class="tg-mnur">long</td>
+    <td class="tg-mnur">lat</td>
+    <td class="tg-z0ub">long</td>
+  </tr>
+  <tr>
+    <td class="tg-vdnk" colspan="3">1</td>
+    <td class="tg-vdnk">1400</td>
+    <td class="tg-fayo">23.0506</td>
+    <td class="tg-vdnk">45.6239</td>
+    <td class="tg-vdnk">29.3636</td>
+    <td class="tg-fayo">52.9595</td>
+    <td class="tg-vdnk">101</td>
+    <td class="tg-vdnk">77</td>
+    <td  class="tg-hixa"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-hixa"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-hixa"><input align="center" type="checkbox" disabled="true"></td>
+    <td class="tg-hixa"><input align="center" type="checkbox" disabled="true"></td>
+    <!-- <td class="tg-vdnk">N</td> -->
+  </tr>
+  <tr>
+    <td class="tg-q2ov" colspan="3">2</td>
+    <td class="tg-q2ov">1405</td>
+    <td class="tg-q2ov">23.0506</td>
+    <td class="tg-q2ov">45.6329</td>
+    <td class="tg-q2ov">32.3596</td>
+    <td class="tg-q2ov">55.6565</td>
+    <td class="tg-q2ov">101</td>
+    <td class="tg-q2ov">75</td>
+    <td class="tg-nehb"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-nehb"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-nehb"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-nehb"><input align="center" type="checkbox" disabled="true"></td>
+  </tr>
+  <tr>
+    <td class="tg-fayo" colspan="3">3</td>
+    <td class="tg-fayo">1410</td>
+    <td class="tg-fayo">23.0506</td>
+    <td class="tg-fayo">45.6239</td>
+    <td class="tg-fayo">35.6262</td>
+    <td class="tg-fayo">57.6767</td>
+    <td class="tg-fayo">101</td>
+    <td class="tg-fayo">72</td>
+    <td class="tg-hixa"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-hixa"><input align="center" type="checkbox" checked  disabled="true"></td>
+    <td class="tg-hixa"><input align="center" type="checkbox" disabled="true"></td>
+    <td class="tg-hixa"><input align="center" type="checkbox" checked  disabled="true"></td>
+  </tr>
+</table>
+
+
+
+</div>
+        		
+        	
+
+
+
+        
+        </div>
+
+       <div  id="table_content">
+      <!--  	 <table class="table table-striped" border="1">
+    <thead class="thead-light">
+      <tr class="bg-success">
+        <th>Ser No.</th>
+        <th>Course Code</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Present</th>
+        <th>Absent</th>
+        <th>Excused</th>
+
+      </tr>
+     
+    </thead>
+    <tbody>
+      <tr >
+        <td>1</td>
+        <td>CSE-401</td>
+        <td>19/02/2020</td>
+        <td>08:00-08:55</td>
+        <td><div class="checkbox"><label><input type="checkbox" value="" checked></label></div> </td>
+        <td><div class="checkbox"><label><input type="checkbox" value=""></label></div> </td>
+        <td><div class="checkbox"><label><input type="checkbox" value=""></label></div> </td>
+      </tr>
+    </tbody> -->
+  </table>
+
+       	
+ </div>
+ <div class="container" id="detailed_content">
+ 
+ 
+  <div class="row">
+        <div class='col-sm-2'>
+            <h4>Total Present :</h4>
+        </div>
+
+        <div id="present" class='col-sm-3'>
+          
+        </div>
+  </div>
+
+ 
+ <div class="row">
+
+        <div class='col-sm-2'>
+            <h4>Total Absent :</h4>
+        </div>
+
+        <div id="absent" class='col-sm-3'>
+           <!--  <input type="password" class="form-control" id="pwd"> -->
+        </div>
+  </div>
+
+ 
+  <div class="row">
+        <div class='col-sm-2'>
+             <h4>Percentage :</h4>
+        </div>
+        
+        <div id="percentage" class='col-sm-3'>
+           <!--  <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea> -->
+        </div>
+  </div>
+  <br>
+ 
+ <br>
+ <br>
+</div>
+
+
+
+
+      </div>
+		</div>
+		
+		</div>
+
+<script src="js/attendance.js"></script>
+<script src="../../js/basic.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
