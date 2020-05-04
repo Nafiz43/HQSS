@@ -25,8 +25,9 @@
     }
       canvas{
 
-  width:600px !important;
+  width:540px !important;
   height:550px !important;
+  padding: 25px;
 
 }
   </style>
@@ -103,7 +104,7 @@
                 </li>
 
                 <li class="nav-item">
-                     <h2>&nbsp;Home Quarantine Surveillance System  </h2>
+                     <h2> &nbsp; Home Quarantine Surveillance System  </h2>
 
 
                 </li>
@@ -248,15 +249,20 @@
 	<table>
     <tr>
         <td><canvas id="line-chart" width="800" height="450"></canvas></td>
+        <td>&nbsp;</td>
         <td><canvas id="radar-chart" width="800" height="600"></canvas></td>
     </tr>
+      <tr>
+        <td><canvas id="heart_rate" width="800" height="450"></canvas></td>
+        <td><canvas id="temp_rate" width="800" height="450"></canvas></td>
+    </tr>
     <tr>
-        <td align="center"> <button  type="button" class="btn btn-secondary">Save as pdf</button></td>
+        <!-- <td align="center"> <button  type="button" class="btn btn-secondary">Save as pdf</button></td>
         <td align="center"><div class="btn-group" role="group" aria-label="Basic example">
     <button type="button" class="btn btn-success">Contact</button>
     <button type="button" class="btn btn-primary">Notify Police</button>
     <button type="button" class="btn btn-danger">Notify Doctor</button>
-</div></canvas></td>
+</div></canvas></td> -->
     </tr>
  <table>
 
@@ -273,31 +279,7 @@
         </div>
 
        <div  id="table_content">
-      <!--  	 <table class="table table-striped" border="1">
-    <thead class="thead-light">
-      <tr class="bg-success">
-        <th>Ser No.</th>
-        <th>Course Code</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Present</th>
-        <th>Absent</th>
-        <th>Excused</th>
 
-      </tr>
-     
-    </thead>
-    <tbody>
-      <tr >
-        <td>1</td>
-        <td>CSE-401</td>
-        <td>19/02/2020</td>
-        <td>08:00-08:55</td>
-        <td><div class="checkbox"><label><input type="checkbox" value="" checked></label></div> </td>
-        <td><div class="checkbox"><label><input type="checkbox" value=""></label></div> </td>
-        <td><div class="checkbox"><label><input type="checkbox" value=""></label></div> </td>
-      </tr>
-    </tbody> -->
   </table>
 <canvas id="bar-chart-grouped" width="50" height="50"></canvas>
 
@@ -352,6 +334,98 @@
 		
 		</div>
 <script>
+
+
+  Chart.defaults.global.defaultFontSize = 11;
+    Chart.defaults.global.defaultFontColor = '#000000';
+  new Chart(document.getElementById("heart_rate"), {
+  type: 'line',
+  data: {
+    labels: [1,2,3,4,5],
+    datasets: [{ 
+        data: [81,77,83,69,71,72,76,68,66,73],
+        label: "Observed",
+        borderColor: "#B90E0A",
+        fill: false
+      }, { 
+        data: [74,76,76,74,72,77,76,74,75,76],
+        label: "Actual",
+        borderColor: "#8e5ea2",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    plugins: {
+            filler: {
+                propagate: true
+            }
+        },
+    
+     scales: {
+        yAxes: [{
+            ticks: {
+                max: 100,
+                min: 60,
+                stepSize: 5,
+                 stacked: true
+            }
+        }]
+        },
+
+    title: {
+      display: true,
+      text: 'Heart Rate',
+      fontSize:14
+    }
+  }
+});
+
+
+ Chart.defaults.global.defaultFontSize = 11;
+    Chart.defaults.global.defaultFontColor = '#000000';
+  new Chart(document.getElementById("temp_rate"), {
+  type: 'line',
+  data: {
+    labels: [1,2,3,4,5],
+    datasets: [{ 
+        data: [36.9,36.6,36.2,36.5,36.8,36.3,36.7,36.8,36.9,36.7],
+        label: "Observed",
+        borderColor: "#B90E0A",
+        fill: false
+      }, { 
+        data: [36.5,36.4,36.4,36.5,36.4,36.5,36.6,36.6,36.4,36.5],
+        label: "Actual",
+        borderColor: "#8e5ea2",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    plugins: {
+            filler: {
+                propagate: true
+            }
+        },
+    
+     scales: {
+        yAxes: [{
+            ticks: {
+                max: 37.0,
+                min: 36.0,
+                stepSize: 0.1,
+                 stacked: true
+            }
+        }]
+        },
+
+    title: {
+      display: true,
+      text: 'Body Temparature',
+      fontSize:14
+    }
+  }
+});
 Chart.defaults.global.defaultFontSize = 11;
     Chart.defaults.global.defaultFontColor = '#000000';
 	new Chart(document.getElementById("line-chart"), {
