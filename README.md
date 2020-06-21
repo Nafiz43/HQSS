@@ -1,5 +1,5 @@
-# HQSS(Home quarantine surveillance system)
-HQSS(Home quarantine surveillance system) is an IoT based device for ensuring home quarantine of suspected corona virus affected people. IoT includes three core procedures: full spectrum perception, reliable transmission and intelligent processing. Utilizing IoT and analyzing big data, HQSS is an effective tool for ensuring home quarantine of suspected or Corana positive patients. In our country noticeable number of people are not health literate so highly scientific matters like home quarantine or home isolation are difficult to ensure. We are developing the IoT device as a wrist bracelet, utilizing biometric based surveillance, continuous monitoring of temperature, heart rate and user's location.
+# HQSS(Home Quarantine Surveillance System)
+HQSS is an IoT based device for ensuring home quarantine of suspected corona virus affected people. IoT includes three core procedures: full spectrum perception, reliable transmission and intelligent processing. Utilizing IoT and analyzing big data, HQSS is an effective tool for ensuring home quarantine of suspected or Corana positive patients. In our country noticeable number of people are not health literate so highly scientific matters like home quarantine or home isolation are difficult to ensure. We are developing the IoT device as a wrist bracelet, utilizing biometric based surveillance, continuous monitoring of temperature, heart rate and user's location.
 ## Prototype of user interfaces
 
 ### Information of a home quarantined person 
