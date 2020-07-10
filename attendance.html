@@ -25,9 +25,9 @@
     }
       canvas{
 
-  width:540px !important;
-  height:550px !important;
-  padding: 5px;
+  width:600px !important;
+  height: 400px !important;
+  padding: 4px;
 
 }
   </style>
@@ -155,7 +155,7 @@
 
  <div class="container-fluid">
  	<div style="font-size: 16pt" class="alert alert-success" role="alert">
-	Detailed Information of user <strong>Noor Nafiz Islam</strong>! </div>
+	Detailed Information of user <strong>Nafiz Imtiaz Khan</strong>! </div>
 
 
  	<style type="text/css">
@@ -421,7 +421,9 @@
   }
 });
 */
-Chart.defaults.global.defaultFontSize = 11;
+
+
+Chart.defaults.global.defaultFontSize = 14;
     Chart.defaults.global.defaultFontColor = '#000000';
 	new Chart(document.getElementById("line-chart"), {
   type: 'line',
@@ -461,7 +463,7 @@ Chart.defaults.global.defaultFontSize = 11;
     title: {
       display: true,
       text: 'Health Information',
-      fontSize:14
+      fontSize:20
     }
   }
 });
@@ -478,29 +480,37 @@ Chart.defaults.global.defaultFontSize = 11;
           pointBorderColor: "#fff",
           pointBackgroundColor: "rgba(255,99,132,1)",
           pointBorderColor: "#fff",
-          data: [25.48,54.16,7.61,8.06,4.45]
+          data: [25.48,54.16,7.61,8.06,4.45],
+          
         }
-        //,
-        //  {
-        //   label: "2050",
-        //   fill: true,
-        //   backgroundColor: "rgba(255,99,132,0.2)",
-        //   borderColor: "rgba(255,99,132,1)",
-        //   pointBorderColor: "#fff",
-        //   pointBackgroundColor: "rgba(255,99,132,1)",
-        //   pointBorderColor: "#fff",
-        //   data: [25.48,54.16,7.61,8.06,4.45]
-        // }
       ]
     },
     options: {
       title: {
         display: true,
         text: 'Position of a person',
-        fontSize :14
-      }
-    }
+        fontSize :22
+    
+      },
+      pointLabels: {
+            fontSize: 54
+          },
+
+          legend: {
+            display: true,
+            labels: {
+                fontSize: 20,
+            }
+        },
+    },
+    
+
+
+
 });
+//   new Chart(document.getElementById("radar-chart")).Radar(data, {
+    
+// });
 
     
   </script>
